@@ -1,0 +1,121 @@
+@media screen and (max-width: 900px) {
+    .main {
+        margin-top: 80px;
+    }
+
+    .header {
+        padding: 30px;
+    }
+
+
+    /* --- LISTE DES PROJETS --- */
+    .item-projet .cell.tags {
+        display: block;
+    }
+
+    .item-projet--dev {
+        margin-bottom: 10px !important;
+
+        li {
+            display: inline-block;
+
+            &:first-of-type {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    .item-projet--tags li {
+        display: inline-block;
+    }
+
+
+    /* --- SINGLE --- */
+    .single {
+        .contenu, .projet-galerie {
+            padding: 0 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .header {
+        display: block;
+        text-align: center;
+        padding: 0;
+
+        .header--breadcrumbs {
+            margin: 10px 0;
+            line-height: 2;
+
+            ol {
+                display: none;
+            }
+        }
+
+        .header--menu {
+            padding: 10px;
+            background-color: #f8f8f8;
+
+            a {
+                line-height: 2;
+            }
+        }
+    }
+
+    .main {
+        margin: 0 0 15px;
+    }
+
+    .titre-principal {
+        margin: 0;
+        transform: translateY(0);
+    }
+
+    .single {
+        padding-bottom: 30px;
+    }
+
+    .item-projet {
+        text-align: center;
+
+        & > a {
+            display: block;
+            padding: 25px 10px 20px;
+        }
+
+        .cell {
+            padding: 0;
+        }
+
+        .cell.date {
+            line-height: 1;
+        }
+
+        .cell.bouton {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .item-projet--titre {
+            margin: 5px 0;
+        }
+
+        .item-projet--dev {
+            margin-bottom: 0 !important;
+
+            li:first-of-type {
+                margin-left: 0;
+            }
+        }
+
+        .item-projet--tags li span {
+            margin-left: 0;
+        }
+    }
+
+    .single .contenu {
+        margin: 50px 0 0;
+    }
+}

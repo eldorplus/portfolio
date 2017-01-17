@@ -1,0 +1,113 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    background-color: #fff;
+    font-size: 0.9em;
+    line-height: 1;
+    padding: 30px 70px 130px;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        line-height: 1.5;
+
+        &:hover, &:focus {
+            color: @c-main-d;
+        }
+    }
+}
+
+
+.header--breadcrumbs  {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+.header--titre-site {
+    display: inline-block;
+    margin-right: 14px;
+
+    h1 {
+        font-size: 1em;
+        font-weight: 300;
+        margin: 0;
+    }
+}
+
+
+.header--breadcrumbs ol {
+    list-style: none;
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 30px;
+        height: 2px;
+        background-color: #ddd;
+        margin-right: 18px;
+    }
+
+    li {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+            margin-right: 14px;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 6px;
+                height: 2px;
+                background-color: #ddd;
+                margin-left: 10px;
+            }
+        }
+
+        &:last-of-type {
+            color: #888;
+        }
+    }
+}
+
+
+.header--menu {
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        line-height: 1;
+    }
+
+    li {
+        display: inline-block;
+
+        &:not(:last-of-type) {
+            margin-right: 18px;
+        }
+    }
+
+    a.router-link-active {
+        color: @c-main-d !important;
+    }
+
+    .twitter a {
+        display: inline-block;
+        vertical-align: -1px;
+        width: 16px;
+        height: 13px;
+        background-image: url(/public/images/twitter.png);
+        background-size: 100% auto;
+
+        &:hover {
+            background-position: bottom;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+/* Apparition des blocs */
+.fx .content,
+.fx .table {
+    animation: fadeIn .4s .4s both ease;
+}
+.fx .galery-project {
+    animation: fadeIn .4s .6s both ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Transition entre les pages */
+.skew-enter-active, .skew-leave-active {
+    transition: all .6s cubic-bezier(.55,0,.1,1);
+}
+.skew-enter {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+.skew-leave-active {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+
+/* Fil d'ariane */
+.breadcrumbs-enter-active, .breadcrumbs-leave-active {
+    transition: all .9s cubic-bezier(.55,0,.1,1);
+    opacity: 1;
+
+    li {
+        transition: all .6s cubic-bezier(.55,0,.1,1);
+
+        &:nth-child(2) {
+            transition-delay: .3s;
+        }
+    }
+}
+.breadcrumbs-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+
+    li {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+}
+.breadcrumbs-leave-active {
+    opacity: 0;
+    transform: translateX(-10px);
+
+    li {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+}

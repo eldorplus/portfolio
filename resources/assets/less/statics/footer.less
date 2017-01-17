@@ -1,0 +1,32 @@
+.footer {
+    color: #666;
+    background-color: #fff;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 50px 15px 20px;
+    display: table;
+    width: 100%;
+
+    p {
+        position: relative;
+        margin: 10px 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    a {
+        color: @c-main-d;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.ready .footer p {
+    opacity: 1;
+    transition: opacity 0.5s 1s;
+}

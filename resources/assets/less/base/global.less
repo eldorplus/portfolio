@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: @font-size-base;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    background-color: #F8F8F8;
+}
+
+
+#main {
+    min-height: calc(100vh - 11.35em);
+
+    .wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+
+.titre-principal {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2;
+    color: #fff;
+    background: linear-gradient(to right, @c-main, @c-main-d);
+    padding: 4em 15px;
+    transform: translateY(-50%);
+    margin-bottom: -5em;
+}

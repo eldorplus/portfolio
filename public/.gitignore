@@ -1,0 +1,6 @@
+*
+!.gitignore
+!manifest.json
+!browserconfig.xml
+!web.config
+!favicon.ico

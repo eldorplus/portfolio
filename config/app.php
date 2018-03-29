@@ -181,7 +181,7 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+        //Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
         /*
          * Application Service Providers...

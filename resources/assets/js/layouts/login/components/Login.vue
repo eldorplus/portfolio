@@ -1,10 +1,10 @@
-<template>
+<template lang="html">
     <div>
-        <div>this is template body</div>
+        <div>Login Page</div>
     </div>
 </template>
 
-<script>
+<script type="text/babel">
     export default{
         data(){
             return{

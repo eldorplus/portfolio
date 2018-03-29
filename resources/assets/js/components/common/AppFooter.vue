@@ -1,16 +1,22 @@
-<template>
+<template lang="html">
     <footer id="footer">
-        <p>Site développé avec <a href="http://laravel.com" target="_blank">Laravel</a> <small>(5.3)</small> ansi que
+        <p>Site développé avec <a href="http://laravel.com" target="_blank">Laravel</a> <small>(5.4)</small> ansi que
             <a href="https://vuejs.org/" target="_blank">Vue JS</a> <small>(Javascript Framework)</small> /
-            <a href="https://github.com/eldorplus/portfolio" target="_blank">Github</a>
-            <br>&copy;&nbsp;2017 - Patrick LUZOLO SIASIA - <a href="mailto:eldorplus@gmail.com">eldorplus@gmail.com</a>
+            <a :href="author.hyperlink" target="_blank">Github</a>
+            <br>Copyright &copy;&nbsp;{{ year }} - {{ author.name }} - <a :href="'mailto:' + author.mail">{{ author.mail }}</a>
         </p>
     </footer>
 </template>
 
-<script>
+<script type="text/babel">
 export default {
   name: 'app-footer',
-  props: ['author']
+  props: ['author'],
+  computed: {
+      year() {
+          const date = new Date()
+          return date.getFullYear()
+      }
+  }
 }
 </script>

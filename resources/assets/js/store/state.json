@@ -1,8 +1,8 @@
 {
-  "state": false,
+  "status": false,
   "breadcrumbs": false,
-  "projects": { "projects": [] },
-  "apropos": { "articles": [] },
+  "projects": [],
+  "apropos": [],
   "portfolio_works": [
     {
       "cover_image": "/media/uploads/portfolio/screen_shot_2016-11-20_at_17.48.51.png",
@@ -92,7 +92,7 @@
   "contacts": {
     "tel": "555 55 55",
     "instagram": "https://www.instagram.com/gbezyuk/",
-    "email": "me@example.com",
+    "mail": "eldorplus@gmail.com",
     "vk": "https://vk.com/id85082",
     "facebook": "https://www.facebook.com/grigory.bezyuk"
   },
@@ -114,8 +114,9 @@
     }
   ],
   "author": {
-    "name": "Patrick LUZOLO",
-    "hyperlink": "https://github.com/eldorplus/portfolio"
+    "name": "Patrick LUZOLO SIASIA",
+    "hyperlink": "https://github.com/eldorplus/portfolio",
+    "mail": "eldorplus@gmail.com"
   },
   "texts": {
     "about_me": {

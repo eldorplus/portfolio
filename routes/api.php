@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('ping', function(){
+    return [
+        'status' => 'ok',
+        'timestamp' => \Carbon\Carbon::now()
+    ];
+});
+
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::resource('users', 'Users\UsersController');
+});

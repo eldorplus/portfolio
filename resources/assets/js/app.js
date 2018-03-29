@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -12,7 +11,7 @@ require('./bootstrap');
  * the body of the page. From here, you may begin adding components to
  * the application, or feel free to tweak this setup for your needs.
  */
-import App from './App.vue'
+import App from './components/App.vue'
 import store from './store'
 import router from './router'
 
@@ -24,17 +23,18 @@ import router from './router'
 // })
 
 /**
- *
  * @type {Vue}
  */
 // eslint-disable-line no-new
 const app = new Vue({
     name: 'main',
     el: '#app',
+    template: '<app/>',
     router,
     store,
     render: h => h(App)
 })
+
 
 /**
  * expose the app, the router and the store.

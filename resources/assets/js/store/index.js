@@ -11,12 +11,12 @@ import * as actions from './actions'
 
 const mutations = {
     SET_SNAPSHOT: (state, {contacts, customer_reviews, portfolio_works, author, texts, services}) => {
-        state.contacts = {contacts}
-        state.customer_reviews = {customer_reviews}
-        state.portfolio_works = {portfolio_works}
-        state.author = {author}
-        state.texts = {texts}
-        state.services = {services}
+        state.contacts = { contacts }
+        state.customer_reviews = { customer_reviews }
+        state.portfolio_works = { portfolio_works }
+        state.author = { author }
+        state.texts = { texts }
+        state.services = { services }
         return state
     },
     SET_PROJECTS:(state, { projects, articles }) => {

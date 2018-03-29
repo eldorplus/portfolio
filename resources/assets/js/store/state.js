@@ -1,16 +1,17 @@
-//import Vue from 'vue'
+import Vue from 'vue'
 
 class Store {
     constructor () {
         this.state = {
-            state: false,
+            status: false,
             breadcrumbs: false,
             projects: {
                 projects: []
             },
             apropos: {
                 articles: []
-            }
+            },
+            author: 'Patrick LUZOLO SIASIA'
         }
     }
 

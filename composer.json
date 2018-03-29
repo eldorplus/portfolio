@@ -4,20 +4,29 @@
     "keywords": ["portfolio", "personal site"],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Patrick LUZOLO SIAISA",
+            "email": "eldorplus@gmail.com",
+            "homepage": "https://p-luzolo.me",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
-        "barryvdh/laravel-ide-helper": "^2.2",
         "guzzlehttp/guzzle": "^6.2",
-        "tymon/jwt-auth": "^0.5.9",
-        "sentry/sentry-laravel": "^0.5.0"
+        "joselfonseca/laravel-api-tools": "^2.1",
+        "joselfonseca/laravel-tactician": "^0.3.3",
+        "laravel/framework": "5.4.*",
+        "laravel/tinker": "~1.0",
+        "sentry/sentry-laravel": "^0.6.1",
+        "spatie/laravel-permission": "^1.11",
+        "webpatser/laravel-uuid": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*",
+        "phpunit/phpunit": "~5.7",
         "phpspec/phpspec": "^3.2"
     },
     "autoload": {
@@ -25,7 +34,8 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Tests\\": "tests/"
         }
     },
     "autoload-dev": {
@@ -50,6 +60,7 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }

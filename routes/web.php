@@ -11,6 +11,18 @@
 |
 */
 
+/*
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Auth::routes();
+**/
+
+Route::get('apidocs', function(){
+    // aglio -i docs/api/blueprint/apidocs.apib --theme-variables Flatly --theme-template triple -o resources/views/apidocs.blade.php
+    return view('apidocs');
+});
+
+Route::get('{uri?}', function () {
+    return view('app');
+})->where('uri', '(.*)');

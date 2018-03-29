@@ -4,9 +4,10 @@ namespace App;
 
 use Exception;
 use GuzzleHttp\Client;
-use Illuminate\Foundation\Application as IlluminateApplication;
 use InvalidArgumentException;
-use Log;
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Foundation\Application as IlluminateApplication;
 
 /**
  * Extends \Illuminate\Foundation\Application to override some defaults.
@@ -18,17 +19,7 @@ class Application extends IlluminateApplication
      *
      * @link https://github.com/eldorplus/portfolio/releases
      */
-    const PORTFOLIO_VERSION = 'v0.1.1';
-
-    /**
-     * We have merged public path and base path.
-     *
-     * @return string
-     */
-    public function publicPath()
-    {
-        return $this->basePath;
-    }
+    const VERSION = 'v0.1.1';
 
     /**
      * Loads a revision'ed asset file, making use of gulp-rev
@@ -41,22 +32,34 @@ class Application extends IlluminateApplication
      *
      * @return string
      */
-    public function rev($file, $manifestFile = null)
-    {
-        static $manifest = null;
+     public function rev($file, $manifestFile = null)
+     {
+         static $manifest;
 
-        $manifestFile = $manifestFile ?: $this->publicPath().'/public/build/rev-manifest.json';
+         $manifestFile = $manifestFile ?: $this->publicPath().'/mix-manifest.json';
 
-        if ($manifest === null) {
-            $manifest = json_decode(file_get_contents($manifestFile), true);
-        }
+         if (!$manifest) {
+             if (! file_exists($manifestPath = $manifestFile)) {
+                 throw new InvalidArgumentException('The Mix manifest does not exist.');
+             }
+             $manifest = json_decode(file_get_contents($manifestPath), true);
+         }
 
-        if (isset($manifest[$file])) {
-            return $this->staticUrl("public/build/{$manifest[$file]}");
-        }
+         if (!starts_with($file, '/')) {
+             $file = "/{$file}";
+         }
 
-        throw new InvalidArgumentException("File {$file} not defined in asset manifest.");
-    }
+         if (!array_key_exists($file, $manifest)) {
+             throw new InvalidArgumentException(
+                 "Unable to locate Mix file: {$file}. Please check your ".
+                 'webpack.mix.js output paths and try again.'
+             );
+         }
+
+         return file_exists(public_path('/hot'))
+             ? new HtmlString("http://localhost:8080{$manifest[$file]}")
+             : new HtmlString($this->staticUrl("public{$manifest[$file]}"));
+     }
 
     /**
      * Get a URL for static file requests.
@@ -98,7 +101,7 @@ class Application extends IlluminateApplication
         } catch (Exception $e) {
             Log::error($e);
 
-            return self::PORTFOLIO_VERSION;
+            return self::VERSION;
         }
     }
 }

@@ -1,5 +1,5 @@
-<template>
-  <div id="app" class="fx" :class="{ready: state}">
+<template lang="html">
+  <div id="app" class="fx" :class="{ready: status}">
     <app-header :title="title"></app-header>
 
     <main id="main">
@@ -11,9 +11,9 @@
   </div>
 </template>
 
-<script>
-import AppHeader from './components/common/AppHeader.vue'
-import AppFooter from './components/common/AppFooter.vue'
+<script type="text/babel">
+import AppHeader from './common/AppHeader.vue'
+import AppFooter from './common/AppFooter.vue'
 
 export default {
   name: 'App',
@@ -25,17 +25,18 @@ export default {
     AppFooter
   },
   computed: {
-    title: function () { return 'PLUS'},
-    //author: function () { return this.$store.state.author }
+    title () { return 'PLUS'},
+    author () { return this.$store.state.author },
+    status () { return this.$store.state.status }
   },
   created () {
     this.$router.beforeEach((to, from, next) => {
-      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop
+      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop
 
       if(currentScroll > 0) {
         jump('#header', {
           duration: 250,
-          callback: function() { next() }
+          callback: () => { next() }
         })
       } else { next() }
     });
